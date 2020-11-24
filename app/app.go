@@ -1,21 +1,19 @@
 package app
 
 import (
-	"fmt"
-
-	"github.com/gin-gonic/gin"
+	"github.com/DemoHn/Catilina/app/controller"
+	"github.com/DemoHn/Catilina/app/model"
+	"github.com/DemoHn/Catilina/app/service"
 )
 
 // StartServer - 启动服务
 func StartServer(conf string) {
-	fmt.Println("Hello World!")
+	db, err := model.Init(":")
+	if err != nil {
+		panic(err)
+	}
 
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
+	service.Init(db)
+	r := controller.Init()
 	r.Run()
 }

@@ -1,1 +1,11 @@
-
+db:
+  default: web_new_prize
+  connections:
+    web_new_prize:
+      host: localhost
+      port: 13357
+      database: web_new_prize
+      username: web_futu
+      password: futu1234@123
+      charset: utf8mb4
+      collation: utf8mb4_general_ci      
