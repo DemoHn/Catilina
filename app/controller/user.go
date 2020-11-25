@@ -16,8 +16,7 @@ func userCreateHandler(c *gin.Context) {
 		return
 	}
 
-	name := req.Name
-	user, err := service.CreateUser(name)
+	user, err := service.CreateUser(req.Name)
 
 	userData := map[string]interface{}{
 		"id":   user.ID,
