@@ -17,5 +17,5 @@ func AddRecord(name string, amount int, debt bool, issueTime time.Time) {
 
 // ListRecords 用于给定条件下列出一定的记账记录
 func ListRecords(search ListSearch) []model.Record {
-
+	return []model.Record{}
 }
